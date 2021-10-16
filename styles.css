@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 5px;
   padding: 0;
 }
 
@@ -11,15 +11,29 @@ body {
   background-image: repeating-linear-gradient(-45deg, #6a6a6a 0, #6a6a6a 2px, #727272 2px, #727272 11px);
 }
 
-form {
+.page {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 
 }
 
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.radio-button-group {
+  display: flex;
+  justify-content: center;
+}
+
 td {
-  width: 33%;
+  width: 25%;
 }
 .main-results {
   display: flex;
@@ -36,26 +50,21 @@ td {
 .stats-container {
   display: flex;
   justify-content: center;
-  width: 35%;
+  width: 85%;
   flex-wrap: wrap;
-  font-size: 30px;
+  font-size: 4vw;
+  font-weight: bold;
 }
 
-.stat {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-
-}
 .poke-image {
-  width: 256px;
-  height: 256px;
+  width: 25vw;
+  height: 25vw;
   object-fit: cover;
 }
 
 .image-container {
-  width: 256px;
-  height: 256px;
+  width: 25vw;
+  height: 25vw;
 }
 
 .poke-images {
@@ -66,16 +75,68 @@ td {
 #pokeData {
   width: 80vw;
   height: 80vh;
-  border: 1px solid yellow;
+  border: 1px solid black;
   background-image: url("PokemonImages/normalType.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 40px;
+  border-radius: 10px;
 }
-#locationData {
-  width: 65%;
-  background-image: linear-gradient(#6a6a6a, #6a6a6a); 
-  border: 3px solid black;
+
+input {
+  border-radius: 5px;
+  border:1px solid black;
+}
+
+@media only screen and (max-width: 960px) {
+
+  #locationData {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-image: linear-gradient(#6a6a6a, #8a8a8a);
+    margin 5px;
+    border-radius: 5px;
+  }
+
+  #pokemonSubmit {
+    width: 25vw;
+  }
+
+  .stat {
+    font-size: 5.5vw;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    font-weight: normal;
+
+  }
+
+
+}
+@media only screen and (min-width: 961px) {
+
+  #locationData {
+    display:flex;
+    justify-content: center;
+    width: 85%;
+    background-image: linear-gradient(#6a6a6a, #8a8a8a);
+    border-radius: 5px;
+  }
+
+  #pokemonSubmit {
+    width: 10vw;
+  }
+
+  .stat {
+    font-size: 3.5vw;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    font-weight: normal;
+
+  }
+
 
 }

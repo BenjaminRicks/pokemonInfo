@@ -4,34 +4,38 @@
     <meta charset='UTF-8'/>
     <title>Benjamin Ricks' page</title>
     <link rel='stylesheet' href='styles.css'/>
+    <meta name='viewport'     content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   </head>
 
   <body>
+    <div class = 'page'>
+      <form>
+	<div class="inputContainer">
+          <label>
+            <input id="pokemonInput" type="text">
+  	    Pokemon name/Pokedex number (Blank = random)
+          </label>
+	  </br>
+          <p>Please select which method you will use to hunt:</p>
+	  <div class = "radio-button-group">
+	    <label>
+            <input type="radio" id="standardMethod" checked="checked" name="huntMethod" value="Standard">
+              Standard
+	    </label>
+	    <label>
+            <input type="radio" id="anyMethod" name="huntMethod" value="Any">
+              Any
+	    </label>
+	  </div>
+  	  </br>
+	  <input id="pokemonSubmit" type="submit" value="Submit"></input>
+	</div>
+      </form>
 
-    <form>
-      <label>
-        <input id="pokemonInput" type="text">
-	Enter a generation number
-      </label>
-      <br/>
-      <label>
-        <input id="generationInput" type="text"></input>
-	Enter a pokemon name or pokedex number
-      </label>
-      <br/>
-
-      <input id="pokemonSubmit" type="submit" value="Submit"></input>
-
-      <p>Please select which method you will use to hunt:</p>
-      <input type="radio" id="standardMethod" checked="checked" name="huntMethod" value="Standard">
-      <label for="html">Standard</label>
-      <input type="radio" id="anyMethod" name="huntMethod" value="Any">
-      <label for="css">Any</label>
-    </form>
-
-    <div id='pokeData'></div>
-    <div id='locationData'></div>
-
+      <div id='pokeData'></div>
+      <div id='locationData'></div>
+    </div>
     <script text="type/javascript" src="script.js"></script>
 
   </body>

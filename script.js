@@ -1,7 +1,6 @@
 document.getElementById("pokemonSubmit").addEventListener("click", function(event) {
   event.preventDefault();
   value = document.getElementById("pokemonInput").value;
-  value = document.getElementById("generationInput").value;
   if (value === "") {
     value = Math.floor(Math.random() * 898) + 1;
   }
@@ -55,7 +54,7 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
       }
       results += "</div>";
       const statsArray = ["HP", "ATK", "DEF", "SP.ATK", "SP.DEF", "SPEED"];
-      results += "<p>Base Stats</p>";
+      results += "<p><strong>Base Stats</strong></p>";
       results += "<div class='stats-container'>";	
       for(i = 0; i < json.stats.length; ++i) {
         results += "<div class='stat'>" + statsArray[i] + ": ";
@@ -66,16 +65,7 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
   
       document.getElementById("pokeData").style.backgroundImage = "url('PokemonImages/" + type + "')";
       document.getElementById("pokeData").innerHTML = results;
-/*  var _ = require('lodash');
-  // Load the core build.
-  var _ = require('lodash/core');
-  // Load the FP build for immutable auto-curried iteratee-first data-last methods.
-  var fp = require('lodash/fp');
 
-  // Load method categories.
-  var array = require('lodash/array');
-  var object = require('lodash/fp/object');
-*/
       const url2 = json.location_area_encounters;
       fetch(url2)
         .then(function(response) {
@@ -140,7 +130,7 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
 	results = "";
 	tableString = "<table border=1 width=100%><tr><td>Version</td><td>Location</td><td>Encounter Rate</td><td>Method</td></tr>";
 	for(let [key, value] of bestRouteMap) {
-          tableString += "<tr><td>" + key + "</td><td>" + printableString(value["routeName"]) + "</td><td>" + value["chance"] + "%</td><td>" + value["method"] + "</td></tr>";
+          tableString += "<tr><td>" + printableString(key) + "</td><td>" + printableString(value["routeName"]) + "</td><td>" + value["chance"] + "%</td><td>" + printableString(value["method"]) + "</td></tr>";
         }
 
 	tableString += "</table>";
