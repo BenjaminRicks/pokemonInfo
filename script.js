@@ -8,7 +8,6 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
     value = value.toLowerCase();
   }
   const isStandardMethod = document.getElementById("standardMethod").checked;
-  console.log(isStandardMethod);
   const url = "https://pokeapi.co/api/v2/pokemon/" + value;
   const typeMap = new Map([
     ["normal", "normalType.jpg"],
@@ -32,9 +31,11 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
 ]);
   fetch(url)
     .then(function(response) {
+
+      let results = "<div class='main-results'>INVALID POKEMON</div>";
+      document.getElementById("pokeData").innerHTML = results;
       return response.json();
     }).then(function(json) {
-      console.log(json);
       let results = "<div class='main-results'>";
       results += "<div class='name-id'>" + capitalizeFirstLetter(json.name) + " #" + json.id + "</div>";
       for(i = 0; i < json.types.length; ++i) {
@@ -72,7 +73,6 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
           return response.json();
 	}).then(function(json) {
         bestRouteMap = new Map();
-	console.log(json);
 	
 	for(i = 0; i < json.length; ++i) {
 	  for(j = 0; j < json[i]["version_details"].length; ++j) {
@@ -102,8 +102,6 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
 			console.log(json[i])
 		}
 		else {
-		  console.log(i + " " + j + " " + k);
-		  console.log("Diff conditions/method");
                   tempValueObj["chance"] = currentChance;
 		  tempValueObj["method"] = currentMethod;
 		  tempValueObj["conditions"] = currentConditions;
