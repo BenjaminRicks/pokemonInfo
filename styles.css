@@ -60,12 +60,16 @@ td {
 .poke-image {
   width: 25vw;
   height: 25vw;
+  max-height: 256px;
+  max-width: 256px;
   object-fit: cover;
 }
 
 .image-container {
   width: 25vw;
   height: 25vw;
+  max-width: 256px;
+  max-height: 256px;
 }
 
 .poke-images {
@@ -96,7 +100,7 @@ input {
   justify-content: center;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 600px) {
 
   #locationData {
     display: flex;
@@ -112,7 +116,7 @@ input {
   }
 
   .stat {
-    font-size: 5.5vw;
+    font-size: 5vw;
     display: flex;
     justify-content: center;
     width: 90%;
@@ -122,6 +126,34 @@ input {
 
 
 }
+
+@media only screen and (min-width: 601px) {
+
+  #locationData {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-image: linear-gradient(#6a6a6a, #8a8a8a);
+    margin 5px;
+    border-radius: 5px;
+  }
+
+  #pokemonSubmit {
+    width: 25vw;
+  }
+
+  .stat {
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    font-weight: normal;
+
+  }
+
+
+}
+
 @media only screen and (min-width: 961px) {
 
   #locationData {
@@ -137,7 +169,7 @@ input {
   }
 
   .stat {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
     display: flex;
     justify-content: center;
     width: 40%;
