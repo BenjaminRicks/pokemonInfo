@@ -99,7 +99,6 @@ document.getElementById("pokemonSubmit").addEventListener("click", function(even
   	      if(tempValueObj["chance"] != null) {
 		if(tempValueObj["routeName"] == json[i]["location_area"]["name"] && conditionsEquals(tempValueObj["conditions"], currentConditions) && tempValueObj["method"] == currentMethod) {
 	          tempValueObj["chance"] += currentChance;
-			console.log(json[i])
 		}
 		else {
                   tempValueObj["chance"] = currentChance;
